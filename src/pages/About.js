@@ -30,19 +30,21 @@ function About() {
         <div className="about_text">
           <h2>ABOUT I.MET</h2>
           <p>
-            Donec eget orci velit. Nunc sit amet interdum dolor. Vestibulum vel
-            placerat urna, eget egestas nulla. Aliquam ipsum tellus, vestibulum
-            eu dui ac, gravida faucibus lectus. <br />
-            <br />
-            Cras ipsum mauris, varius suscipit euismod quis, faucibus non ex.
-            Nulla mi diam, ultricies vitae laoreet eget, lacinia molestie elit.{" "}
-            Suspendisse vitae tincidunt urna. Curabitur hendrerit, massa et
-            varius condimentum, nisi est maximus sem, a pretium ex arcu in ex.{" "}
-            <br />
-            <br /> Pellentesque habitant morbi tristique senectus et netus et
-            malesuada fames ac turpis egestas. Aliquam ultricies rhoncus odio,
-            vel euismod lorem fermentum et. Nam tortor sem, tincidunt quis
-            faucibus sit amet, ultrices a nisl.
+            I.MET aims to revolutionize the way people connect with each other
+            by transforming their social experiences. I.MET, a tech-startup
+            based in the UK and is part of the Business Support Services
+            Industry.
+            <br /> <br />
+            We are a developer of information sharing technology designed to
+            instantly share any data using various product categories such as
+            card, ring, key chain, pop-up sticker, etc. The product helps people
+            in sharing profile data with other people and keep a history of
+            everyone that they connected with and access their data at any time
+            at anywhere.
+            <br /> <br />
+            We bring you a contactless and touchless solution much needed to
+            replace the now outdated practices of shaking hands, exchanging
+            business cards, or typing on a stranger’s phone.
           </p>
         </div>
       </div>
