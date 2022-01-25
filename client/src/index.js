@@ -7,10 +7,15 @@ import App from "./App";
 import { ThemeProvider } from "styled-components";
 import { Default } from "./themes/Default";
 
+//contexts
+import StatusProvider from "./contexts/StatusContext";
+
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={Default}>
-      <App />
+      <StatusProvider>
+        <App />
+      </StatusProvider>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="368.324" height="245.986" viewBox="0 0 368.324 245.986">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.704" cy="0.148" r="0.327" gradientTransform="matrix(-0.245, -0.906, 0.526, -0.423, 0.798, 0.849)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#2b2424"/>
+      <stop offset="1" stop-color="#170707"/>
+    </radialGradient>
+    <filter id="Rectangle_224" x="0" y="7.057" width="368.324" height="238.929" filterUnits="userSpaceOnUse">
+      <feOffset dy="10" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feFlood flood-opacity="0.278"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="card_template" transform="translate(10.818 -11.12)">
+    <g id="Ellipse_220" data-name="Ellipse 220" transform="translate(298.426 11.12)" fill="none" stroke="#002f65" stroke-width="2">
+      <ellipse cx="29.079" cy="29.079" rx="29.079" ry="29.079" stroke="none"/>
+      <ellipse cx="29.079" cy="29.079" rx="28.079" ry="28.079" fill="none"/>
+    </g>
+    <g id="Ellipse_221" data-name="Ellipse 221" transform="translate(309.504 22.197)" fill="none" stroke="#002f65" stroke-width="2">
+      <ellipse cx="18.001" cy="18.001" rx="18.001" ry="18.001" stroke="none"/>
+      <ellipse cx="18.001" cy="18.001" rx="17.001" ry="17.001" fill="none"/>
+    </g>
+    <g id="Ellipse_222" data-name="Ellipse 222" transform="translate(319.197 31.891)" fill="none" stroke="#002f65" stroke-width="2">
+      <ellipse cx="8.308" cy="8.308" rx="8.308" ry="8.308" stroke="none"/>
+      <ellipse cx="8.308" cy="8.308" rx="7.308" ry="7.308" fill="none"/>
+    </g>
+    <rect id="Rectangle_224-2" data-name="Rectangle 224" width="312.62" height="186.668" rx="16" transform="translate(21.077 31.275)" fill="#fff"/>
+    <g id="card_template-2" data-name="card_template" transform="translate(19.182 38.177)">
+      <g transform="matrix(1, 0, 0, 1, -30, -27.06)" filter="url(#Rectangle_224)">
+        <rect id="Rectangle_224-3" data-name="Rectangle 224" width="308.323" height="178.929" rx="16" transform="translate(30 27.06)" fill="url(#radial-gradient)"/>
+      </g>
+      <text id="Your_Name" data-name="Your Name" transform="translate(26.283 134.275)" fill="#eaeaea" font-size="15" font-family="Poppins-Bold, Poppins" font-weight="700"><tspan x="0" y="0">Your Name</tspan></text>
+      <text id="Digital_Business_Card" data-name="Digital Business Card" transform="translate(26.283 152.526)" fill="#ababab" font-size="10" font-family="Poppins-MediumItalic, Poppins" font-weight="500" font-style="italic"><tspan x="0" y="0">Digital Business Card</tspan></text>
+      <g id="Groupe_73" data-name="Groupe 73" transform="translate(230.166 131.089)">
+        <rect id="Rectangle_215" data-name="Rectangle 215" width="13.858" height="10.243" transform="translate(0 0)" fill="#fff"/>
+        <rect id="Rectangle_218" data-name="Rectangle 218" width="13.858" height="10.243" transform="translate(25.908 22.896) rotate(180)" fill="#fff"/>
+        <rect id="Rectangle_216" data-name="Rectangle 216" width="9.038" height="10.243" transform="translate(16.87 0)" fill="#fff"/>
+        <rect id="Rectangle_217" data-name="Rectangle 217" width="9.038" height="10.243" transform="translate(9.038 22.896) rotate(180)" fill="#fff"/>
+      </g>
+      <path id="Polygone_2" data-name="Polygone 2" d="M7.076,0l7.076,12.131H0Z" transform="translate(258.726 139.811) rotate(-30)" fill="#fff"/>
+      <g id="I" transform="translate(25.805 28.151)">
+        <g id="XMLID_49_" transform="translate(16.344 0)">
+          <path id="XMLID_54_" d="M332.422,408.531a5.137,5.137,0,0,1-1.388,3.516,4.6,4.6,0,0,1-.83.709,5.241,5.241,0,0,1-1.751.785,5.158,5.158,0,0,1-1.192.136,5.084,5.084,0,0,1-2.943-.921c-.03-.03-.075-.045-.106-.075a4.993,4.993,0,0,1-.664-.589c0-.03.015-.045.015-.075a.136.136,0,0,0-.075.015,5.373,5.373,0,0,1-.619-.8,5.171,5.171,0,0,1-.77-2.7,3.673,3.673,0,0,1,.015-.407,5.866,5.866,0,0,1,.2-1.071,4.847,4.847,0,0,1,.332-.815,5.167,5.167,0,0,1,9.779,2.294Z" transform="translate(-322.1 -403.4)" fill="#ec910a"/>
+          <path id="XMLID_53_" d="M331.475,460.6c0,.03-.015.045-.015.075l-.06-.06A.164.164,0,0,1,331.475,460.6Z" transform="translate(-329.996 -451.968)" fill="#ec910a"/>
+        </g>
+        <g id="XMLID_56_" transform="translate(6.022 4.527)">
+          <path id="XMLID_58_" d="M261.593,437.369a3.944,3.944,0,0,1-1.071,2.7,4.418,4.418,0,0,1-.634.558,4,4,0,0,1-1.343.6,3.935,3.935,0,0,1-1.811,0,3.869,3.869,0,0,1-1.343-.6.265.265,0,0,1-.075-.06,3.672,3.672,0,0,1-.513-.453.114.114,0,0,1,.015-.06.114.114,0,0,0-.06.015,3.7,3.7,0,0,1-.468-.619,3.9,3.9,0,0,1-.589-2.083,2.227,2.227,0,0,1,.015-.317,5.031,5.031,0,0,1,.151-.83,3.281,3.281,0,0,1,.257-.634,3.941,3.941,0,0,1,7.47,1.781Z" transform="translate(-253.7 -433.4)" fill="#ec910a"/>
+          <path id="XMLID_57_" d="M260.56,477.5a.115.115,0,0,1-.015.06l-.045-.045C260.53,477.515,260.545,477.5,260.56,477.5Z" transform="translate(-259.474 -470.845)" fill="#ec910a"/>
+        </g>
+        <path id="XMLID_43_" d="M232.2,499.2a8.977,8.977,0,0,0-.694,3.441v3.652a41.032,41.032,0,0,0-8.707,4.1h0v-5.3a8.158,8.158,0,0,1,5.855-7.8A6.635,6.635,0,0,0,232.2,499.2Z" transform="translate(-221.441 -483.13)" fill="#ec910a"/>
+        <g id="XMLID_31_" transform="translate(11.636 10.654)">
+          <path id="XMLID_39_" d="M310.654,492.538v.8c-.06,0-.121-.015-.166-.015a.191.191,0,0,1-.091-.015h-.076a49.791,49.791,0,0,0-19.422,2.354v-3.124a7.346,7.346,0,0,1,.8-3.335,8.094,8.094,0,0,1,.513-.86,7.6,7.6,0,0,1,.905-1.056c.151-.151.317-.287.483-.423a7.242,7.242,0,0,1,1.524-.966,6.806,6.806,0,0,1,1.313-.468.191.191,0,0,1,.091-.015,4.156,4.156,0,0,0,.589.423,6.716,6.716,0,0,0,7.923-.438A7.363,7.363,0,0,1,310.654,492.538Z" transform="translate(-290.9 -483.68)" fill="#ec910a"/>
+          <path id="XMLID_37_" d="M331.5,474.015c.015.015.03.045.06.06,0-.03.015-.045.015-.075A.164.164,0,0,1,331.5,474.015Z" transform="translate(-325.373 -474)" fill="#ec910a"/>
+        </g>
+        <path id="XMLID_26_" d="M213.794,553.359c-.151.03,16.766-10.171,33.215-7.274l-2.777,3.26A58.4,58.4,0,0,0,213.794,553.359Z" transform="translate(-213.793 -524.112)" fill="#ec910a"/>
+        <path id="XMLID_12_" d="M419.76,537.8h0Z" transform="translate(-388.627 -517.518)" fill="#ec910a"/>
+        <path id="XMLID_59_" d="M257.9,492.641a19.739,19.739,0,0,1,6.444-1.041,8.3,8.3,0,0,0-2.581,3.411c-.739,2.052-2.309,1.343-2.309,1.343Z" transform="translate(-251.244 -478.29)" fill="#ec910a"/>
+        <path id="XMLID_60_" d="M327.082,481.537a12.566,12.566,0,0,0-12.782,0l4.739,5.584Z" transform="translate(-299.133 -468.242)" fill="#ec910a"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -14,7 +14,9 @@ function Solutions() {
   return (
     <Wrapper>
       <div className="container">
-        <h1 className="title">How I.MET transforms their social experiences</h1>
+        <h1 className="title">
+          How Shrizzle transforms their social experiences
+        </h1>
         <h4 class="tagline">
           Revolutionizing the way people connect with each other
         </h4>

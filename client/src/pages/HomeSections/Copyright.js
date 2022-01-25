@@ -4,7 +4,7 @@ import styled from "styled-components";
 function Copyright() {
   return (
     <Wrapper>
-      <p>&copy; Copyright 2022 - I.MET</p>
+      <p>&copy; Copyright 2022 - Shrizzle</p>
     </Wrapper>
   );
 }

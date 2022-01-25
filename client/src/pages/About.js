@@ -12,7 +12,10 @@ import TeamBackground from "../assets/solution_bg.svg";
 import TeamBackgroundMobile from "../assets/solution_bg_mobile.svg";
 import Decoration from "../assets/decoration.svg";
 import TeamMember from "../components/TeamMember";
+
+//utils
 import { Team } from "../utils/Team";
+
 function About() {
   return (
     <Wrapper>
@@ -28,12 +31,12 @@ function About() {
       <div className="about_imet container">
         <img src={AboutImg} alt="" />
         <div className="about_text">
-          <h2>ABOUT I.MET</h2>
+          <h2>ABOUT SHRIZZLE</h2>
           <p>
-            I.MET aims to revolutionize the way people connect with each other
-            by transforming their social experiences. I.MET, a tech-startup
-            based in the UK and is part of the Business Support Services
-            Industry.
+            Shrizzle aims to revolutionize the way people connect with each
+            other by transforming their social experiences. Shrizzle, a
+            tech-startup based in the UK and is part of the Business Support
+            Services Industry.
             <br /> <br />
             We are a developer of information sharing technology designed to
             instantly share any data using various product categories such as
@@ -50,7 +53,7 @@ function About() {
       </div>
       <div className="imet_team ">
         <div className="container">
-          <h2>OUR PROFESSIONAL TEAM</h2>
+          <h2>OUR TEAM</h2>
           <div className="team_members">
             {Team.map((member) => (
               <TeamMember member={member} />
@@ -71,7 +74,7 @@ const Wrapper = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
-    padding: 4rem 1rem 8rem;
+    padding: 3rem 1rem 8rem;
     margin-bottom: 8rem;
 
     h1 {
