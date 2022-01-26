@@ -12,6 +12,7 @@ import Messages from "./pages/Admin/Messages";
 import Subscriptions from "./pages/Admin/Subscriptions";
 import Shop from "./pages/Shop";
 import InterestInProducts from "./pages/Admin/InterestInProducts";
+import Auth from "./pages/User/Auth";
 
 function App() {
   return (
@@ -51,6 +52,10 @@ function App() {
 
         <Route exact path="/thank-you">
           <ThankYou />
+        </Route>
+
+        <Route exact path="/auth" >
+          <Auth />
         </Route>
       </Switch>
     </BrowserRouter>
