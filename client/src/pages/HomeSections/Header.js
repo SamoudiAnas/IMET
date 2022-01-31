@@ -1,29 +1,28 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 //components
-import Navbar from "../../components/Navbar";
+import Navbar from '../../components/Navbar';
 
 //images
-import HeroImage from "../../assets/hero_image.svg";
-import HeroBackground from "../../assets/hero_bg.svg";
-import HeroBackgroundMobile from "../../assets/mobile_hero_bg.svg";
+import HeroImage from '../../assets/hero_image.svg';
+import HeroBackground from '../../assets/hero_bg.svg';
+import HeroBackgroundMobile from '../../assets/mobile_hero_bg.svg';
 
 function Header() {
-  return (
-    <Wrapper>
-      <div className="container">
-        <Navbar />
-        <div className="info_container">
-          <img src={HeroImage} alt="" className="hero_img" />
-          <div className="title">
-            <h1 className="hero_title">Have you met</h1>
-            <h1 className="hero_title">Vin &amp; Anna, yet?</h1>
-          </div>
-        </div>
-      </div>
-    </Wrapper>
-  );
+	return (
+		<Wrapper>
+			<div className="container">
+				<Navbar />
+				<div className="info_container">
+					<img src={HeroImage} alt="" className="hero_img" />
+					<div className="title">
+						<h1 className="hero_title">Vin &amp; Anna Journey</h1>
+					</div>
+				</div>
+			</div>
+		</Wrapper>
+	);
 }
 
 export default Header;

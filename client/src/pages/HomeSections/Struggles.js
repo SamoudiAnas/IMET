@@ -1,63 +1,59 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 //images
-import Decoration from "../../assets/decoration.svg";
-import Struggle1 from "../../assets/struggle1.svg";
-import Struggle2 from "../../assets/struggle2.svg";
-import Struggle3 from "../../assets/struggle3.svg";
-import Struggle4 from "../../assets/struggle 4.svg";
-import Struggle5 from "../../assets/struggle 5.svg";
+import Decoration from '../../assets/decoration.svg';
+import Struggle1 from '../../assets/struggle1.svg';
+import Struggle2 from '../../assets/struggle2.svg';
+import Struggle3 from '../../assets/struggle3.svg';
+import Struggle4 from '../../assets/struggle 4.svg';
+import Struggle5 from '../../assets/struggle 5.svg';
 
 function Struggles() {
-  return (
-    <Wrapper>
-      <h2>
-        <div className="title"> Anna &amp; Vin's Struggles</div>
-      </h2>
+	return (
+		<Wrapper>
+			<h2>
+				<div className="title"> Anna &amp; Vin's Struggles</div>
+			</h2>
 
-      <div class="struggles_container">
-        <div class="struggle">
-          <img src={Struggle1} alt="struggle 1" class="struggle_img" />
-          <p class="struggle_info">
-            A typo Queen, <span class="highlighted_struggle">who cannot</span>{" "}
-            get people's name and details saved easily
-          </p>
-        </div>
+			<div className="struggles_container">
+				<div className="struggle">
+					<img src={Struggle1} alt="struggle 1" className="struggle_img" />
+					<p className="struggle_info">
+						A typo Queen, <span className="highlighted_struggle">who cannot</span> get people's name and details saved
+						easily
+					</p>
+				</div>
 
-        <div class="struggle">
-          <img src={Struggle2} alt="struggle 2" class="struggle_img" />
-          <p class="struggle_info">
-            Gets awkward to{" "}
-            <span class="highlighted_struggle">ask for number or multiple</span>{" "}
-            social media profiles of someone he just met
-          </p>
-        </div>
-        <div class="struggle">
-          <img src={Struggle3} alt="struggle 2" class="struggle_img" />
-          <p class="struggle_info">
-            <span class="highlighted_struggle">Fears of not connecting</span>{" "}
-            with more people in a social setting
-          </p>
-        </div>
-        <div class="struggle">
-          <img src={Struggle4} alt="struggle 4" class="struggle_img" />
-          <p class="struggle_info">
-            A lightweight who is unable to share her{" "}
-            <span class="highlighted_struggle">home drop location</span>
-          </p>
-        </div>
-        <div class="struggle">
-          <img src={Struggle5} alt="struggle 5" class="struggle_img" />
-          <p class="struggle_info">
-            A creative professional who also runs a local business and is{" "}
-            <span class="highlighted_struggle">facing challenges</span> to
-            engage with her customers
-          </p>
-        </div>
-      </div>
-    </Wrapper>
-  );
+				<div className="struggle">
+					<img src={Struggle2} alt="struggle 2" className="struggle_img" />
+					<p className="struggle_info">
+						Gets awkward to <span className="highlighted_struggle">ask for number or multiple</span> social media
+						profiles of someone he just met
+					</p>
+				</div>
+				<div className="struggle">
+					<img src={Struggle3} alt="struggle 2" className="struggle_img" />
+					<p className="struggle_info">
+						<span className="highlighted_struggle">Fears of not connecting</span> with more people in a social setting
+					</p>
+				</div>
+				<div className="struggle">
+					<img src={Struggle4} alt="struggle 4" className="struggle_img" />
+					<p className="struggle_info">
+						A lightweight who is unable to share her <span className="highlighted_struggle">home drop location</span>
+					</p>
+				</div>
+				<div className="struggle">
+					<img src={Struggle5} alt="struggle 5" className="struggle_img" />
+					<p className="struggle_info">
+						A creative professional who also runs a local business and is{' '}
+						<span className="highlighted_struggle">facing challenges</span> to engage with her customers
+					</p>
+				</div>
+			</div>
+		</Wrapper>
+	);
 }
 
 export default Struggles;

@@ -1,4 +1,4 @@
-const { buildSchema } = require("graphql");
+const { buildSchema } = require('graphql');
 
 module.exports = buildSchema(`
         type User {
@@ -6,6 +6,20 @@ module.exports = buildSchema(`
           fullName: String!
           email: String!
           password: String
+          address:String
+          bio:String
+          profilePic:String
+          phoneNumber:String
+          instagram:String
+          facebook:String
+          twitter:String
+          linkedIn:String
+          customLink:String
+          snapshat:String
+          whatsapp:String
+          discord:String
+          map:String
+          youtube:String
           isAdmin: Boolean!
         }
 
@@ -43,11 +57,25 @@ module.exports = buildSchema(`
           isAdmin: Boolean!
         }
 
-
         input MessageInput {
           fullName: String!
           email: String!
           message: String!
+        }
+
+        input ProfileInfoInput{
+          address:String
+          bio:String
+          profilePic:String
+          phoneNumber:String
+          instagram:String
+          facebook:String
+          linkedIn:String
+          customLink:String
+          snapshat:String
+          whatsapp:String
+          twitter:String
+          discord:String
         }
 
         type RootQuery {
@@ -55,16 +83,15 @@ module.exports = buildSchema(`
           messages:[Message!]!
           subscriptions:[Subscription!]!
           login(email: String!, password: String!): AuthData!
-          getUserData: User!
+          getUserData: User
         }
 
         type RootMutation {
           createUser(userInput: UserInput): User
-          
+          login(email:String!, password:String!): AuthData
           createMessage(messageInput: MessageInput): Message
-
+          updateProfile(profileInfoInput: ProfileInfoInput) :User
           createSubscription(email: String!): Subscription
-          
           createItem(name: String!): Item
           addInterest(name: String!,email: String!): Item
         }

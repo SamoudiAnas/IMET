@@ -1,112 +1,111 @@
-import axios from "axios";
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import styled from "styled-components";
+import axios from 'axios';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import styled from 'styled-components';
 
 //contexts
-import { useStatusContext } from "../../contexts/StatusContext";
+import { useStatusContext } from '../../contexts/StatusContext';
 
 //images
-import Logo from "../../assets/Logo.svg";
-import NotifyBG from "../../assets/notify_bg.svg";
+import Logo from '../../assets/Logo.svg';
+import NotifyBG from '../../assets/notify_bg.svg';
 
 //utils
-import { Failed, Succeeded, Sending } from "../../utils/StatusInfos";
+import { Failed, Succeeded, Sending } from '../../utils/StatusInfos';
 
 function NotifyMe() {
-  const history = useHistory();
-  const [email, setemail] = useState("");
+	const history = useHistory();
+	const [ email, setemail ] = useState('');
 
-  //context
-  const { isStatusShown, setIsStatusShown, setStatusInfo } = useStatusContext();
+	//context
+	const { isStatusShown, setIsStatusShown, setStatusInfo } = useStatusContext();
 
-  const handleNotify = async (e) => {
-    try {
-      e.preventDefault();
+	const handleNotify = async (e) => {
+		try {
+			e.preventDefault();
 
-      //if some input is empty
-      if (email.trim() === "") {
-        setStatusInfo({
-          ...Failed,
-          message: "Please fill in the form before submitting!",
-        });
-        setIsStatusShown(true);
-        return;
-      }
+			//if some input is empty
+			if (email.trim() === '') {
+				setStatusInfo({
+					...Failed,
+					message: 'Please fill in the form before submitting!'
+				});
+				setIsStatusShown(true);
+				return;
+			}
 
-      //show the status modal
-      setStatusInfo(Sending);
-      setIsStatusShown(true);
+			//show the status modal
+			setStatusInfo(Sending);
+			setIsStatusShown(true);
 
-      //send to the server
-      let result = await axios.post(
-        "http://vin-anna.com/server/graphql",
-        {
-          query: `
+			//send to the server
+			let result = await axios.post(
+				'http://vin-anna.com/server/graphql',
+				{
+					query: `
                 mutation{
                   createSubscription(email:"${email}"){
                     _id
                   }
                 }
-                `,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+                `
+				},
+				{
+					headers: {
+						'Content-Type': 'application/json'
+					}
+				}
+			);
 
-      if (!result.ok) {
-        //show the status modal
-        setStatusInfo(Failed);
-        setIsStatusShown(true);
-      }
+			if (!result.ok) {
+				//show the status modal
+				setStatusInfo(Failed);
+				setIsStatusShown(true);
+			}
 
-      if (result.status === 200) {
-        //show the status modal
-        setStatusInfo({
-          ...Succeeded,
-          message: "Thank you for your subscription",
-        });
-        setIsStatusShown(true);
-        history.push("/thank-you");
-      }
-    } catch (err) {
-      //show the status modal
-      setStatusInfo({
-        ...Failed,
-        message: err.response.data.errors[0].message,
-      });
-      setIsStatusShown(true);
-    }
-  };
+			if (result.status === 200) {
+				//show the status modal
+				setStatusInfo({
+					...Succeeded,
+					message: 'Thank you for your subscription'
+				});
+				setIsStatusShown(true);
+				history.push('/thank-you');
+			}
+		} catch (err) {
+			//show the status modal
+			setStatusInfo({
+				...Failed,
+				message: err.response.data.errors[0].message
+			});
+			setIsStatusShown(true);
+		}
+	};
 
-  return (
-    <Wrapper>
-      <center>
-        <img src={Logo} class="logo" />
-        <p className="description">
-          When the world is going digital, why not your way of connecting with
-          other people?
-          <br /> Sign up to get <span className="highlighted">early</span>{" "}
-          <span className="highlighted">access</span> and more about our launch.
-        </p>
-        <form>
-          <input
-            type="email"
-            name="_replyto"
-            placeholder="Please enter your email adress"
-            onChange={(e) => setemail(e.target.value)}
-            required
-          />
-          <button type="submit" onClick={handleNotify}>
-            Notify Me
-          </button>
-        </form>
-      </center>
-    </Wrapper>
-  );
+	return (
+		<Wrapper>
+			<center>
+				<img src={Logo} className="logo" />
+				<p className="description">
+					When the world is going digital, why not your way of connecting with other people?
+					<br /> Sign up to get <span className="highlighted">early</span> <span className="highlighted">access</span>{' '}
+					and more about our launch.
+				</p>
+				<form>
+					<input
+						type="email"
+						name="_replyto"
+						placeholder="Please enter your email adress"
+						onChange={(e) => setemail(e.target.value)}
+						required
+					/>
+					<button type="submit" onClick={handleNotify}>
+						Notify Me
+					</button>
+				</form>
+			</center>
+		</Wrapper>
+	);
 }
 
 export default NotifyMe;

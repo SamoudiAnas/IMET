@@ -1,82 +1,73 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 //images
-import Solution1 from "../../assets/solution1.svg";
-import Solution2 from "../../assets/solution 2.svg";
-import Solution3 from "../../assets/solution 3.svg";
-import Solution4 from "../../assets/solution 4.svg";
-import Solution5 from "../../assets/solution 5.svg";
-import SolutionsBackground from "../../assets/solution_bg.svg";
-import SolutionsBackgroundMobile from "../../assets/solution_bg_mobile.svg";
+import Solution1 from '../../assets/solution1.svg';
+import Solution2 from '../../assets/solution 2.svg';
+import Solution3 from '../../assets/solution 3.svg';
+import Solution4 from '../../assets/solution 4.svg';
+import Solution5 from '../../assets/solution 5.svg';
+import SolutionsBackground from '../../assets/solution_bg.svg';
+import SolutionsBackgroundMobile from '../../assets/solution_bg_mobile.svg';
 
 function Solutions() {
-  return (
-    <Wrapper>
-      <div className="container">
-        <h1 className="title">
-          How Shrizzle transforms their social experiences
-        </h1>
-        <h4 class="tagline">
-          Revolutionizing the way people connect with each other
-        </h4>
-        <div className="solutions_container container">
-          <div className="solution">
-            <img src={Solution1} alt="" className="solution_img" />
-            <div className="solution_text text1">
-              <div>
-                Gives her a <span className="highlighted">tech based</span>{" "}
-                digital solution to connect with others via a{" "}
-                <span className="highlighted">contactless solution</span>
-              </div>{" "}
-            </div>
-          </div>
+	return (
+		<Wrapper>
+			<div className="container">
+				<h1 className="title">How Shrizzle transforms their social experiences</h1>
+				<h4 className="tagline">Revolutionizing the way people connect with each other</h4>
+				<div className="solutions_container container">
+					<div className="solution">
+						<img src={Solution1} alt="" className="solution_img" />
+						<div className="solution_text text1">
+							<div>
+								Gives her a <span className="highlighted">tech based</span> digital solution to connect with others via
+								a <span className="highlighted">contactless solution</span>
+							</div>{' '}
+						</div>
+					</div>
 
-          <div className="solution">
-            <img src={Solution2} alt="" className="solution_img" />
-            <div className="solution_text text2">
-              <div>
-                Enables him to{" "}
-                <span className="highlighted">selectively share</span> his
-                social media handles, number, and profiles in one go
-              </div>{" "}
-            </div>
-          </div>
+					<div className="solution">
+						<img src={Solution2} alt="" className="solution_img" />
+						<div className="solution_text text2">
+							<div>
+								Enables him to <span className="highlighted">selectively share</span> his social media handles, number,
+								and profiles in one go
+							</div>{' '}
+						</div>
+					</div>
 
-          <div className="solution">
-            <img src={Solution3} alt="" className="solution_img" />
-            <div className="solution_text text3">
-              <div>
-                Allows him <span className="highlighted">to connect</span> with
-                attendees of an event{" "}
-                <span className="highlighted">effectively</span>
-              </div>
-            </div>
-          </div>
-          <div className="solution">
-            <img src={Solution4} alt="" className="solution_img" />
-            <div className="solution_text text4">
-              <div>
-                <span className="highlighted">Simply taps</span> and share her
-                drop location to her date or the new friend she just met
-              </div>{" "}
-            </div>
-          </div>
-          <div className="solution">
-            <img src={Solution5} alt="" className="solution_img" />
-            <div className="solution_text text5">
-              <div>
-                Powers her to create a{" "}
-                <span className="highlighted">digital portfolio</span> of
-                product and service offerings, collect reviews, and{" "}
-                <span className="highlighted">engage with her customers</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </Wrapper>
-  );
+					<div className="solution">
+						<img src={Solution3} alt="" className="solution_img" />
+						<div className="solution_text text3">
+							<div>
+								Allows him <span className="highlighted">to connect</span> with attendees of an event{' '}
+								<span className="highlighted">effectively</span>
+							</div>
+						</div>
+					</div>
+					<div className="solution">
+						<img src={Solution4} alt="" className="solution_img" />
+						<div className="solution_text text4">
+							<div>
+								<span className="highlighted">Simply taps</span> and share her drop location to her date or the new
+								friend she just met
+							</div>{' '}
+						</div>
+					</div>
+					<div className="solution">
+						<img src={Solution5} alt="" className="solution_img" />
+						<div className="solution_text text5">
+							<div>
+								Powers her to create a <span className="highlighted">digital portfolio</span> of product and service
+								offerings, collect reviews, and <span className="highlighted">engage with her customers</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</Wrapper>
+	);
 }
 
 export default Solutions;
