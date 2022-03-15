@@ -7,7 +7,6 @@ import ShopTitleBG from "../assets/shop_title_bg.svg";
 import ShopHeroImg from "../assets/social_tag.png";
 import SolutionsBackground from "../assets/solution_bg.svg";
 import SolutionsBackgroundMobile from "../assets/solution_bg_mobile.svg";
-import NotifyBG from "../assets/notify_bg.svg";
 import How_1 from "../assets/how_1.svg";
 import How_2 from "../assets/how_2.svg";
 import How_3 from "../assets/how_3.svg";

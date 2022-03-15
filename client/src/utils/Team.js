@@ -10,7 +10,7 @@ export const Team = [
       instagram: "https://www.instagram.com/jodcineaes/",
       linkedIn: "https://www.linkedin.com/in/jodie-chao-543728214/",*/
     },
-    profilePic: "https://shrizzle.me/team/JodieChao.jpeg",
+    profilePic: "https://www.shrizzle.me/team/JodieChao.jpeg",
     personalityType: "",
     personalityLink: "https://www.16personalities.com/enfj-personality",
   },
@@ -26,7 +26,7 @@ export const Team = [
       facebook: "https://www.facebook.com/vinayaksharma11",
       linkedIn: "https://www.linkedin.com/in/vinayaksharma-nepal/",*/
     },
-    profilePic: "https://shrizzle.me/team/VinayakSharma.jpg",
+    profilePic: "https://www.shrizzle.me/team/VinayakSharma.jpg",
     personalityType: "ENFJ - The Protagonist",
     personalityLink: "https://www.16personalities.com/enfj-personality",
   },
@@ -40,21 +40,57 @@ export const Team = [
       instagram: "https://instagram.com/grishma_thapa?utm_medium=copy_link",
       linkedIn: "https://www.linkedin.com/in/grishma-thapa-4695bb1a9",*/
     },
-    profilePic: "https://shrizzle.me/team/GrishmaThapa.jpeg",
+    profilePic: "https://www.shrizzle.me/team/GrishmaThapa.jpeg",
     personalityType: "",
     personalityLink: "https://www.16personalities.com/enfj-personality",
   },
   {
-    name: "Yi Liu",
-    role: "Content Creator",
+    name: "Amine Elkhalidy",
+    role: "App Developer",
     description:
-      "Love photography and travelling. Pursuing film studies with prior experience of directing reality TV shows",
+      "Knack for front and back end technologies with a keen eye on quality check",
     profiles: {},
-    profilePic: "https://shrizzle.me/team/YiLiu.jpeg",
+    profilePic: "https://www.shrizzle.me/team/AmineElkhalidy.jpg",
+    personalityType: "",
+    personalityLink: "https://www.16personalities.com/enfj-personality",
+  },
+  {
+    name: "Jialutong  Xu",
+    role: "Procurement Specialist",
+    description:
+      "Prior experience of running her own ecommerce business in China, Luna take care of our supply chain and relations with our partners.",
+    profiles: {
+      /*
+      facebook: "https://m.facebook.com/yasser.hassani.75",
+      instagram: "https://www.instagram.com/yassirhassani__/",
+      linkedIn: "https://www.linkedin.com/mwlite/in/yassir-hassani-51957a180",*/
+    },
+    profilePic: "https://www.shrizzle.me/team/JialutongXu.jpeg",
     personalityType: "",
     personalityLink: "https://www.16personalities.com/enfj-personality",
   },
 
+  {
+    name: "Diae Hajib",
+    role: "App Developer",
+    description:
+      "Software Engineer by day, Designer and Bounty hunter at the latter hours",
+    profiles: {},
+    profilePic: "https://www.shrizzle.me/team/Diae.png",
+    personalityType: "",
+    personalityLink: "https://www.16personalities.com/enfj-personality",
+  },
+
+  {
+    name: "Ishani Wagh",
+    role: "Packaging Design",
+    description:
+      "Passionate to create unique and meaningful product and experience. Pursuing MA in packaging design with prior experience in product design.",
+    profiles: {},
+    profilePic: "https://www.shrizzle.me/team/IshaniWagh.jpg",
+    personalityType: "",
+    personalityLink: "https://www.16personalities.com/enfj-personality",
+  },
   {
     name: "Anas Samoudi",
     role: "Designer/Developer",
@@ -66,11 +102,41 @@ export const Team = [
       github: "github.com/SamoudiAnas",
       linkedIn: "https://www.linkedin.com/in/anas-samoudi-a8b296157/",*/
     },
-    profilePic: "https://shrizzle.me/team/AnasSamoudi.png",
+    profilePic: "https://www.shrizzle.me/team/AnasSamoudi.png",
     personalityType: "",
     personalityLink: "https://www.16personalities.com/infj-personality",
   },
+  {
+    name: "Betül Kılıç Girgin",
+    role: "Legal Advisor",
+    description:
+      "Specialising in Intellectual Property, Competiton Law, and Data Protection. Enjoy interactions with new people and new experiences.",
+    profiles: {},
+    profilePic: "https://www.shrizzle.me/team/BetulKilic.jpg",
+    personalityType: "",
+    personalityLink: "https://www.16personalities.com/enfj-personality",
+  },
 
+  {
+    name: "Yi Liu",
+    role: "Content Creator",
+    description:
+      "Love photography and travelling. Pursuing film studies with prior experience of directing reality TV shows",
+    profiles: {},
+    profilePic: "https://www.shrizzle.me/team/YiLiu.jpeg",
+    personalityType: "",
+    personalityLink: "https://www.16personalities.com/enfj-personality",
+  },
+  {
+    name: "Jack Westhead",
+    role: "Advertising/Scriptwriting",
+    description:
+      "A young and keen creative mind, assisting the team with scripts for the adverts and created contents",
+    profiles: {},
+    profilePic: "https://www.shrizzle.me/team/JackWesthead.jpeg",
+    personalityType: "",
+    personalityLink: "https://www.16personalities.com/enfj-personality",
+  },
   {
     name: "Yassir Hassani",
     role: "Procurer",
@@ -82,18 +148,7 @@ export const Team = [
       instagram: "https://www.instagram.com/yassirhassani__/",
       linkedIn: "https://www.linkedin.com/mwlite/in/yassir-hassani-51957a180",*/
     },
-    profilePic: "https://shrizzle.me/team/YassirHassani.jpg",
-    personalityType: "",
-    personalityLink: "https://www.16personalities.com/enfj-personality",
-  },
-
-  {
-    name: "Jack Westhead",
-    role: "Advertising/Scriptwriting",
-    description:
-      "A young and keen creative mind, assisting the team with scripts for the adverts and created contents",
-    profiles: {},
-    profilePic: "https://shrizzle.me/team/JackWesthead.jpeg",
+    profilePic: "https://www.shrizzle.me/team/YassirHassani.jpg",
     personalityType: "",
     personalityLink: "https://www.16personalities.com/enfj-personality",
   },

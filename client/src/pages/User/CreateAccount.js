@@ -1,205 +1,227 @@
-import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import { v4 } from 'uuid';
-import axios from 'axios';
-import { useHistory } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import { v4 } from "uuid";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 //contexts
-import { useCreateUserContext } from '../../contexts/CreateUserContext';
-import { useStatusContext } from '../../contexts/StatusContext';
-import { useAuthContext } from '../../contexts/AuthContext';
-import { useProfileModalContext } from '../../contexts/ProfileModalContext';
+import { useCreateUserContext } from "../../contexts/CreateUserContext";
+import { useStatusContext } from "../../contexts/StatusContext";
+import { useAuthContext } from "../../contexts/AuthContext";
+import { useProfileModalContext } from "../../contexts/ProfileModalContext";
 
 //firebase
-import { storage } from '../../firebase';
-import { ref, getDownloadURL, uploadBytesResumable } from 'firebase/storage';
+import { storage } from "../../firebase";
+import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 
 //components
-import Navbar from '../../components/Navbar';
-import Copyright from '../HomeSections/Copyright';
+import Navbar from "../../components/Navbar";
+import Copyright from "../HomeSections/Copyright";
 
 //images
-import { ReactComponent as CameraIcon } from '../../assets/camera_icon.svg';
-import CreateAccountTitleBg from '../../assets/create_account_title_bg.svg';
-import ProfilePicTemplate from '../../assets/profile_pic_template.svg';
-import SocialHandleSetup from '../../components/SocialHandleSetup';
+import { ReactComponent as CameraIcon } from "../../assets/camera_icon.svg";
+import CreateAccountTitleBg from "../../assets/create_account_title_bg.svg";
+import ProfilePicTemplate from "../../assets/profile_pic_template.svg";
+import SocialHandleSetup from "../../components/SocialHandleSetup";
 
 //utils
-import { Failed, Succeeded } from '../../utils/StatusInfos';
-import { API_URL } from '../../utils/apiUrl';
-import { getUserData } from '../../helpers/AuthHelpers/GetUserData';
+import { Failed, Succeeded } from "../../utils/StatusInfos";
+import { API_URL } from "../../utils/apiUrl";
+import { getUserData } from "../../helpers/AuthHelpers/GetUserData";
 
 function CreateAccount() {
-	//user profile modal
-	const {setIsMyProfileModalOpen} = useProfileModalContext();
+  //user profile modal
+  const { setIsMyProfileModalOpen } = useProfileModalContext();
 
-	//history react router dom
-	const history = useHistory();
+  //history react router dom
+  const history = useHistory();
 
-	//get the token from the auth context
-	const { token,  currentUser,setCurrentUser } = useAuthContext();
+  //get the token from the auth context
+  const { token, currentUser, setCurrentUser } = useAuthContext();
 
-	//status message context
-	const { setIsStatusShown, setStatusInfo } = useStatusContext();
+  //status message context
+  const { setIsStatusShown, setStatusInfo } = useStatusContext();
 
-	//get inputs from context
-	const { phone, email, website, facebook, twitter, instagram, snapshat, discord, whatsapp } = useCreateUserContext();
+  //get inputs from context
+  const {
+    phone,
+    email,
+    website,
+    facebook,
+    twitter,
+    instagram,
+    snapshat,
+    discord,
+    whatsapp,
+  } = useCreateUserContext();
 
-	//input data
-	const [ bio, setbio ] = useState('');
-	const [ address, setaddress ] = useState('');
+  //input data
+  const [bio, setbio] = useState("");
+  const [address, setaddress] = useState("");
 
-	//image
-	const [ image, setImage ] = useState(null);
-	const [ url, setUrl ] = useState('');
-	const [ isUrlSet, setIsUrlSet ] = useState(false);
-	const [ progress, setProgress ] = useState(0);
+  //image
+  const [image, setImage] = useState(null);
+  const [url, setUrl] = useState("");
+  const [isUrlSet, setIsUrlSet] = useState(false);
+  const [progress, setProgress] = useState(0);
 
+  useEffect(() => {
+    getUserData(localStorage.getItem("token"), setCurrentUser);
+    console.log(currentUser);
+    if (currentUser !== null) {
+      if (currentUser.phoneNumber !== "" && currentUser.phoneNumber !== null) {
+        setIsMyProfileModalOpen(true);
+        history.push("/");
+      }
+    }
+  }, [currentUser]);
 
+  const handleChange = (e) => {
+    console.log(e);
+    if (e.target.files[0]) {
+      setImage(e.target.files[0]);
+      console.log(image);
+    }
+  };
 
+  useEffect(() => {
+    if (image) {
+      uploadFiles();
+    }
+  }, [image]);
 
-	useEffect(() => {
-		getUserData(localStorage.getItem("token"),setCurrentUser)
-		console.log(currentUser);
-		if(currentUser !== null){
-			if(currentUser.phoneNumber !== "" && currentUser.phoneNumber !== null ){
-				setIsMyProfileModalOpen(true)
-				history.push("/")
-			}
-		}
-	}, [currentUser]);
-	
+  const uploadFiles = () => {
+    const storageRef = ref(storage, `images/${v4()}`);
+    console.log(storageRef);
+    const uploadTask = uploadBytesResumable(storageRef, image);
 
-	const handleChange = (e) => {
-		console.log(e);
-		if (e.target.files[0]) {
-			setImage(e.target.files[0]);
-			console.log(image);
-		}
-	};
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        const prog = Math.round(
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        );
+        setProgress(prog);
+      },
+      (error) => console.log(error),
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          setUrl(downloadURL);
+          setIsUrlSet(true);
+        });
+      }
+    );
+  };
 
-	useEffect(
-		() => {
-			if (image) {
-				uploadFiles();
-			}
-		},
-		[ image ]
-	);
+  //handle creation of profile
+  const handleProfileCreation = async () => {
+    //conditions
+    if (phone === "") {
+      setStatusInfo({
+        ...Failed,
+        message: "Please enter at least your phone number!",
+      });
+      return;
+    }
 
-	const uploadFiles = () => {
-		const storageRef = ref(storage, `images/${v4()}`);
-		console.log(storageRef);
-		const uploadTask = uploadBytesResumable(storageRef, image);
-
-		uploadTask.on(
-			'state_changed',
-			(snapshot) => {
-				const prog = Math.round(snapshot.bytesTransferred / snapshot.totalBytes * 100);
-				setProgress(prog);
-			},
-			(error) => console.log(error),
-			() => {
-				getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-					setUrl(downloadURL);
-					setIsUrlSet(true);
-				});
-			}
-		);
-	};
-
-	//handle creation of profile
-	const handleProfileCreation = async () => {
-		//conditions
-		if (phone === '') {
-			setStatusInfo({ ...Failed, message: 'Please enter at least your phone number!' });
-			return;
-		}
-
-		let result = await axios.post(
-			API_URL,
-			{
-				query: `
+    let result = await axios.post(
+      API_URL,
+      {
+        query: `
                 mutation{
                   updateProfile(profileInfoInput:{address:"${address}",bio:"${bio}",profilePic:"${url}",phoneNumber:"${phone}", instagram:"${instagram}", facebook:"${facebook}", linkedIn:"",customLink:"${website}",snapshat:"${snapshat}",whatsapp:"${whatsapp}",twitter:"${twitter}",discord:"${discord}"}){
                     _id
                   }
                 }
-      `
-			},
-			{
-				headers: {
-					'Content-Type': 'application/json',
-					Authorization: 'Bearer ' + token
-				}
-			}
-		);
+      `,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+      }
+    );
 
-		if (result.status !== 200) {
-			setStatusInfo(Failed);
-			setIsStatusShown(true);
-		}
+    if (result.status !== 200) {
+      setStatusInfo(Failed);
+      setIsStatusShown(true);
+    }
 
-		if (result.status === 200) {
-			setStatusInfo({ ...Succeeded, message: 'Your profile is updated!!!' });
-			setIsStatusShown(true);
-			history.push('/my-profile');
-		}
-	};
+    if (result.status === 200) {
+      setStatusInfo({ ...Succeeded, message: "Your profile is updated!!!" });
+      setIsStatusShown(true);
+      history.push("/my-profile");
+    }
+  };
 
-	return (
-		<Wrapper>
-			<div className="page_title_container">
-				<div className="container">
-					<Navbar />
-				</div>
-				<div className="container">
-					<h1>Create your profile</h1>
-				</div>
-			</div>
+  return (
+    <Wrapper>
+      <div className="page_title_container">
+        <div className="container">
+          <Navbar />
+        </div>
+        <div className="container">
+          <h1>Create your profile</h1>
+        </div>
+      </div>
 
-			<div className="profile_info container">
-				<div>
-					<h2>Setup your profile picture</h2>
-					<div className="profile-image">
-						<div className="profile_pic">
-							<img src={isUrlSet ? url : ProfilePicTemplate} alt="" />
-						</div>
-						<div className="upload-button">
-							<CameraIcon className="camera_icon" />
+      <div className="profile_info container">
+        <div>
+          <h2>Setup your profile picture</h2>
+          <div className="profile-image">
+            <div className="profile_pic">
+              <img src={isUrlSet ? url : ProfilePicTemplate} alt="" />
+            </div>
+            <div className="upload-button">
+              <CameraIcon className="camera_icon" />
 
-							<input className="file-upload" type="file" accept="image/*" onChange={(e) => handleChange(e)} />
-						</div>
-					</div>
-					{progress > 0 && progress < 100 ? (
-						<p className="progress">Waiting for image to upload ({progress}% completed)</p>
-					) : null}
-					{progress === 100 ? <p className="progress">Image uploaded!</p> : null}
-				</div>
-				<div className="profile_inputs">
-					<h2>LET'S GET YOU STARTED</h2>
-					<input type="text" placeholder="Address" value={address} onChange={(e) => setaddress(e.target.value)} />
-					<textarea
-						type="text"
-						rows="5"
-						placeholder="Your bio ..."
-						value={bio}
-						onChange={(e) => setbio(e.target.value)}
-					/>
-				</div>
-			</div>
+              <input
+                className="file-upload"
+                type="file"
+                accept="image/*"
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+          </div>
+          {progress > 0 && progress < 100 ? (
+            <p className="progress">
+              Waiting for image to upload ({progress}% completed)
+            </p>
+          ) : null}
+          {progress === 100 ? (
+            <p className="progress">Image uploaded!</p>
+          ) : null}
+        </div>
+        <div className="profile_inputs">
+          <h2>LET'S GET YOU STARTED</h2>
+          <input
+            type="text"
+            placeholder="Address"
+            value={address}
+            onChange={(e) => setaddress(e.target.value)}
+          />
+          <textarea
+            type="text"
+            rows="5"
+            placeholder="Your bio ..."
+            value={bio}
+            onChange={(e) => setbio(e.target.value)}
+          />
+        </div>
+      </div>
 
-			<SocialHandleSetup />
+      <SocialHandleSetup />
 
-			<div className="button_container">
-				<button className="create_button" onClick={handleProfileCreation}>
-					Create my profile
-				</button>
-			</div>
+      <div className="button_container">
+        <button className="create_button" onClick={handleProfileCreation}>
+          Create my profile
+        </button>
+      </div>
 
-			<Copyright />
-		</Wrapper>
-	);
+      <Copyright />
+    </Wrapper>
+  );
 }
 
 export default CreateAccount;

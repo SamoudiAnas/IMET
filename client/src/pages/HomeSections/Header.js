@@ -17,7 +17,9 @@ function Header() {
 				<div className="info_container">
 					<img src={HeroImage} alt="" className="hero_img" />
 					<div className="title">
-						<h1 className="hero_title">Vin &amp; Anna Journey</h1>
+						<h1 className="hero_title">Explore</h1>
+            <h1 className="hero_title">Vin &amp; Anna's </h1>
+            <h1 className="hero_title">Journey</h1>
 					</div>
 				</div>
 			</div>

@@ -1,22 +1,22 @@
-import axios from 'axios';
-import { API_URL } from '../../utils/apiUrl';
+import axios from "axios";
+import { API_URL } from "../../utils/apiUrl";
 
 export const createNewUser = async (fullName, email, password) => {
-	return await axios.post(
-		API_URL,
-		{
-			query: `
+  return await axios.post(
+    API_URL,
+    {
+      query: `
         mutation{
-          createUser(userInput:{fullName:"${fullName}",email:"${email}", password:"${password}",isAdmin:false}){
+          createUser(userInput:{fullName:"${fullName}",email:"${email}", password:"${password}"}){
             _id
           }
         }
-    `
-		},
-		{
-			headers: {
-				'Content-Type': 'application/json'
-			}
-		}
-	);
+    `,
+    },
+    {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
 };
